@@ -1,17 +1,24 @@
-var _ = require('lodash'),
-    util = require('util'),
-    Stream = require('./lib/util/stream'),
-    Server = require('./lib/server.js'),
-    Image = require('./util/image'),
-    middleware = require('./middleware'),
-    Wolperting = require('class-wolperting');
+'use strict';
+
+var Server = require('./lib/server');
 
 module.exports = {
-    Server: function(config) {
-        var hooks = _.omit(config, 'config'),
-            server = new Server({
-                hooks: hooks
-            });
+    get Sizes() {
+        return require('./lib/size.js');
+    },
+
+    get Storage() {
+        return {
+            //            S3: require('./lib/storage/s3'),
+            Fs: require('./lib/storage/fs')
+        };
+    },
+
+    Server: function(args) {
+        var server = new Server({
+            hooks: args.hooks,
+            config: args.config
+        });
 
 
         return Object.freeze({
@@ -24,14 +31,7 @@ module.exports = {
             },
 
             get middleware() {
-                return middleware(serf, config.config);
-            },
-
-            get Storage() {
-                return {
-                    S3: require('./storage/s3'),
-                    fs: require('./storage/fs')
-                };
+                return require('./lib/middleware')(server, args.config);
             }
         });
     }
