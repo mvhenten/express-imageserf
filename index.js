@@ -9,7 +9,7 @@ module.exports = {
 
     get Storage() {
         return {
-            //            S3: require('./lib/storage/s3'),
+            S3: require('./lib/storage/s3'),
             Fs: require('./lib/storage/fs')
         };
     },
