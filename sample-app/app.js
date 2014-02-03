@@ -6,14 +6,16 @@ app.use(express.bodyParser());
 var Serf = require('../index');
 
 require('./db').init(function(err, db) {
+    'use strict';
+
     var im = Serf.Server({
-        config: {
-            sizes: Serf.Sizes,
-            storage: new Serf.Storage.Fs({
-                path: __dirname + '/images'
-            }),
-            path: '/:id/:size.jpg',
-        },
+        operations: Serf.Sizes,
+
+        storage: new Serf.Storage.Fs({
+            path: __dirname + '/images'
+        }),
+
+        path: '/:id/:size.jpg',
 
         hooks: {
             create: function(type, done) {
@@ -45,7 +47,7 @@ require('./db').init(function(err, db) {
     app.get('/show/:id', function(req, res) {
         var html = '';
 
-        for (key in Serf.Sizes) {
+        for (var key in Serf.Sizes) {
             if (key !== 'original') {
                 html += '<img src="/img/' + req.params.id + '/' + key + '.jpg" /><br/>';
             }
@@ -59,7 +61,7 @@ require('./db').init(function(err, db) {
             console.log(data);
             res.redirect('/show/' + id);
         });
-    })
+    });
 
     app.use('/img', im.middleware);
 

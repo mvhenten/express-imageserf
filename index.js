@@ -15,10 +15,7 @@ module.exports = {
     },
 
     Server: function(args) {
-        var server = new Server({
-            hooks: args.hooks,
-            config: args.config
-        });
+        var server = new Server(args);
 
 
         return Object.freeze({
@@ -31,7 +28,7 @@ module.exports = {
             },
 
             get middleware() {
-                return require('./lib/middleware')(server, args.config);
+                return require('./lib/middleware')(server, args.path);
             }
         });
     }
