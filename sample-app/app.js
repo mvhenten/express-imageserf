@@ -58,7 +58,6 @@ require('./db').init(function(err, db) {
 
     app.post('/', function(req, res) {
         im.create(req.files.image.path, 'original', function(err, data, id) {
-            console.log(data);
             res.redirect('/show/' + id);
         });
     });
