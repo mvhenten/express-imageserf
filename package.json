@@ -36,7 +36,7 @@
         "lodash": "~2.4.1",
         "util": "~0.10.2",
         "async": "~0.2.10",
-        "class-wolperting": "0.0.3",
+        "class-wolperting": "~0.0.3",
         "path": "~0.4.9",
         "url": "~0.7.9",
         "knox": "~0.8.8",
