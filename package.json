@@ -1,16 +1,16 @@
 {
-    "name": "express-imageserf",
-    "version": "0.0.1",
-    "description": "express component to scale and serve images from configurable storage backends",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha test/*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/mvhenten/express-imageserf.git"
-    },
-    "keywords": [
+  "name": "express-imageserf",
+  "version": "0.0.2",
+  "description": "express component to scale and serve images from configurable storage backends",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mvhenten/express-imageserf.git"
+  },
+  "keywords": [
     "express",
     "image",
     "resize",
@@ -21,27 +21,28 @@
     "middleware",
     "images"
   ],
-    "author": "Matthijs van Henten",
-    "license": "BSD",
-    "bugs": {
-        "url": "https://github.com/mvhenten/express-imageserf/issues"
-    },
-    "devDependencies": {
-        "js-beautify": "~1.4.2",
-        "mocha": "~1.17.1",
-        "jshint": "~2.4.3"
-    },
-    "dependencies": {
-        "express": "~3.4.8",
-        "lodash": "~2.4.1",
-        "util": "~0.10.2",
-        "async": "~0.2.10",
-        "class-wolperting": "~0.0.3",
-        "path": "~0.4.9",
-        "url": "~0.7.9",
-        "knox": "~0.8.8",
-        "gm": "~1.14.2",
-        "stream": "0.0.1",
-        "request": "~2.33.0"
-    }
+  "author": "Matthijs van Henten",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/mvhenten/express-imageserf/issues"
+  },
+  "devDependencies": {
+    "js-beautify": "~1.4.2",
+    "mocha": "~1.17.1",
+    "jshint": "~2.4.3"
+  },
+  "dependencies": {
+    "express": "~3.4.8",
+    "lodash": "~2.4.1",
+    "util": "~0.10.2",
+    "async": "~0.2.10",
+    "class-wolperting": "~0.0.3",
+    "path": "~0.4.9",
+    "url": "~0.7.9",
+    "knox": "~0.8.8",
+    "gm": "~1.14.2",
+    "stream": "0.0.1",
+    "request": "~2.33.0",
+    "mkdirp": "~0.3.5"
+  }
 }
