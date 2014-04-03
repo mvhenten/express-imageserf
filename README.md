@@ -1,5 +1,8 @@
 # WARNING BETA SOFTWARE
 
+I am developing this software as part of a larger project, and will implement 
+partially as needed. 
+
 express-imageserf
 =================
 
